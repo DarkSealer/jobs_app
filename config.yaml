@@ -1,0 +1,160 @@
+# User Profile Configuration
+profile:
+  name: "Your Name"
+  email: "your.email@example.com"
+  
+  # Professional summary/description
+  description: |
+    Full-stack software engineer with 5+ years of experience building scalable web applications.
+    Passionate about clean code, microservices architecture, and cloud-native solutions.
+  
+  # Years of experience
+  experience_years: 5
+  
+  # Technical skills
+  skills:
+    - Python
+    - JavaScript
+    - TypeScript
+    - React
+    - Node.js
+    - Django
+    - FastAPI
+    - PostgreSQL
+    - MongoDB
+    - Docker
+    - Kubernetes
+    - AWS
+    - GCP
+    - CI/CD
+    - Git
+  
+  # Preferred job titles
+  job_titles:
+    - Software Engineer
+    - Senior Software Engineer
+    - Full Stack Developer
+    - Backend Engineer
+    - Frontend Engineer
+    - DevOps Engineer
+  
+  # Projects you've built
+  projects:
+    - name: "E-commerce Platform"
+      description: "Built a scalable e-commerce platform handling 10k+ daily transactions"
+      technologies:
+        - React
+        - Node.js
+        - PostgreSQL
+        - Redis
+    
+    - name: "Microservices Architecture"
+      description: "Designed and implemented microservices for payment processing"
+      technologies:
+        - Python
+        - FastAPI
+        - Docker
+        - Kubernetes
+    
+    - name: "Real-time Analytics Dashboard"
+      description: "Created real-time analytics dashboard for business intelligence"
+      technologies:
+        - TypeScript
+        - React
+        - WebSocket
+        - MongoDB
+
+# Search Preferences
+search:
+  # Location preferences (can be city, state, country, or "Remote")
+  locations:
+    - "San Francisco, CA"
+    - "New York, NY"
+    - "Remote"
+  
+  # Radius in miles for location-based search
+  radius_miles: 50
+  
+  # Include remote jobs
+  include_remote: true
+  
+  # Remote-only mode (ignores location)
+  remote_only: false
+  
+  # Job types to include
+  job_types:
+    - full-time
+    - contract
+    - part-time
+  
+  # Experience levels
+  experience_levels:
+    - mid-level
+    - senior
+    - lead
+  
+  # Minimum salary expectation (optional)
+  min_salary: 100000
+  
+  # Keywords to prioritize
+  priority_keywords:
+    - "machine learning"
+    - "cloud"
+    - "microservices"
+    - "scalable"
+  
+  # Keywords to exclude
+  exclude_keywords:
+    - "internship"
+    - "junior"
+    - "entry level"
+
+# Job Board Settings
+job_boards:
+  linkedin:
+    enabled: true
+    search_limit: 50
+  
+  indeed:
+    enabled: true
+    search_limit: 50
+  
+  glassdoor:
+    enabled: true
+    search_limit: 30
+  
+  stackoverflow:
+    enabled: true
+    search_limit: 30
+  
+  github_jobs:
+    enabled: false
+    search_limit: 20
+
+# Matching Configuration
+matching:
+  # Minimum skill match percentage (0-100)
+  min_skill_match: 60
+  
+  # Weight for skills in matching (0-1)
+  skills_weight: 0.5
+  
+  # Weight for experience in matching (0-1)
+  experience_weight: 0.3
+  
+  # Weight for project relevance (0-1)
+  projects_weight: 0.2
+  
+  # Require exact tech stack match
+  strict_tech_match: false
+
+# Output Settings
+output:
+  # Save results to file
+  save_to_file: true
+  output_format: "json"  # json, csv, or both
+  output_directory: "./results"
+  
+  # Display settings
+  show_matches_in_terminal: true
+  verbose: true
