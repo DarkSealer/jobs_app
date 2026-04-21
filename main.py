@@ -15,6 +15,7 @@ from datetime import datetime
 from src.models.profile import UserProfile
 from src.matcher import JobMatcher
 from src.scraper.indeed_scraper import IndeedScraper
+from src.scraper.remotive_scraper import RemotiveScraper
 from src.utils.output import display_results, save_results
 
 
@@ -154,6 +155,33 @@ def search(
                 click.echo(f"   ⚠️  Error searching Indeed: {e}")
     
     indeed_scraper.close()
+
+    # Fallback source when direct scraping is blocked or returns empty
+    if not all_jobs:
+        click.echo("🔁 Indeed returned no results. Trying Remotive API fallback...")
+        remotive_scraper = RemotiveScraper()
+
+        for job_query in search_queries:
+            try:
+                jobs = remotive_scraper.search(
+                    query=job_query,
+                    remote=True,
+                    limit=max(5, limit // max(1, len(search_queries))),
+                )
+                all_jobs.extend(jobs)
+                if verbose:
+                    click.echo(f"   ✓ Found {len(jobs)} fallback jobs for '{job_query}'")
+            except Exception as e:
+                click.echo(f"   ⚠️  Error searching Remotive: {e}")
+
+        remotive_scraper.close()
+
+    # Remove duplicates caused by overlapping queries across sources
+    unique_jobs = {}
+    for job in all_jobs:
+        key = job.url or f"{job.source.value}:{job.title}:{job.company}:{job.location}"
+        unique_jobs[key] = job
+    all_jobs = list(unique_jobs.values())
     
     if not all_jobs:
         click.echo("\n⚠️  No jobs found. This could be due to:")

@@ -1,132 +1,208 @@
 # User Profile Configuration
 profile:
-  name: "Your Name"
-  email: "your.email@example.com"
-  
+  name: "Leontin Andrei"
+  email: "leontin@geek-tec.com"
+
   # Professional summary/description
   description: |
-    Full-stack software engineer with 5+ years of experience building scalable web applications.
-    Passionate about clean code, microservices architecture, and cloud-native solutions.
-  
+    Self-taught software engineer and builder with 10+ years of experience across mobile development, game development, and AI-powered automation, including 5+ years of professional Flutter experience. I build production-ready cross-platform applications for Android, iOS, Windows, Web, and backend-connected systems using Flutter, Firebase, Supabase, Unity, and automation tools like n8n. Strong in end-to-end product delivery, MVP development, AI integrations, internal tools, and solving real operational problems with clean, practical software.
+
   # Years of experience
-  experience_years: 5
-  
+  experience_years: 10
+
   # Technical skills
   skills:
-    - Python
-    - JavaScript
-    - TypeScript
-    - React
-    - Node.js
-    - Django
-    - FastAPI
+    - Flutter
+    - Dart
+    - Firebase
+    - Firebase Auth
+    - Firebase Firestore
+    - Firebase Storage
+    - Firebase Cloud Functions
+    - Firebase Cloud Messaging
+    - Firebase Analytics
+    - Firebase Crashlytics
+    - Supabase
     - PostgreSQL
-    - MongoDB
-    - Docker
-    - Kubernetes
-    - AWS
-    - GCP
-    - CI/CD
+    - SQLite
+    - Hive
+    - Bloc
+    - Cubit
+    - Provider
+    - go_router
+    - Unity
+    - C#
+    - PHP
+    - WooCommerce
+    - REST APIs
+    - OpenAI API
+    - GPT-4o
+    - AI Integration
+    - RAG
+    - LangChain
+    - Pinecone
+    - n8n
+    - Make
+    - Zapier
+    - Bluetooth
     - Git
-  
+    - CI/CD
+    - Vercel
+    - WordPress
+    - WebGL
+
   # Preferred job titles
   job_titles:
+    - Senior Flutter Developer
+    - Senior Flutter Engineer
+    - Flutter Developer
+    - Flutter Engineer
+    - Mobile Developer
+    - Mobile Engineer
+    - Cross-Platform Developer
     - Software Engineer
     - Senior Software Engineer
+    - Product Engineer
+    - Founding Engineer
     - Full Stack Developer
-    - Backend Engineer
-    - Frontend Engineer
-    - DevOps Engineer
-  
+
   # Projects you've built
   projects:
-    - name: "E-commerce Platform"
-      description: "Built a scalable e-commerce platform handling 10k+ daily transactions"
+    - name: "Romanian Aikido Federation Management Platform"
+      description: "Built production mobile applications for club and federation management, including attendance tracking, payments, invoice generation, QR-based workflows, member management, trainer tools, and federation registration flows."
       technologies:
-        - React
-        - Node.js
-        - PostgreSQL
-        - Redis
-    
-    - name: "Microservices Architecture"
-      description: "Designed and implemented microservices for payment processing"
+        - Flutter
+        - Firebase
+        - Firestore
+        - Cloud Functions
+        - PDF Generation
+        - QR Code
+        - REST API
+
+    - name: "AI-Powered Email Marketing Automation Pipeline"
+      description: "Designed and built an end-to-end AI marketing automation system that pulls live WooCommerce product data, semantically indexes it, retrieves relevant context, and generates personalized email campaigns automatically."
+      technologies:
+        - n8n
+        - WooCommerce API
+        - Pinecone
+        - GPT-4o
+        - SMTP
+        - AI Automation
+
+    - name: "InfoBanat Mobile App"
+      description: "Built a Flutter mobile app for content delivery from a WordPress-based publication, optimizing article fetching, structure, and presentation for a clean, modern reading experience."
+      technologies:
+        - Flutter
+        - WordPress
+        - REST API
+
+    - name: "Driving School Questionnaire App"
+      description: "Built a mobile app for driving school exam preparation with question databases, answer validation, performance statistics, and response-time tracking."
+      technologies:
+        - Flutter
+        - SQLite
+        - Local Database
+
+    - name: "WebGL Product Presentation Simulator"
+      description: "Created a Unity WebGL simulator with a virtual environment for presenting products and interactive visual content."
+      technologies:
+        - Unity
+        - C#
+        - WebGL
+
+    - name: "AR App for Retail Markets"
+      description: "Developed a Unity-based augmented reality mobile application that displayed animations and interactive content on store shelves for physical products."
+      technologies:
+        - Unity
+        - C#
+        - AR
+
+    - name: "FRIDAY AI Assistant"
+      description: "Built a local JARVIS-style assistant architecture using local LLM workflows, memory organization, retrieval pipelines, and tool integrations for personal productivity and information access."
       technologies:
         - Python
-        - FastAPI
-        - Docker
-        - Kubernetes
-    
-    - name: "Real-time Analytics Dashboard"
-      description: "Created real-time analytics dashboard for business intelligence"
-      technologies:
-        - TypeScript
-        - React
-        - WebSocket
-        - MongoDB
+        - LM Studio
+        - Gemma
+        - Local LLM
+        - Retrieval
+        - Automation
 
 # Search Preferences
 search:
-  # Location preferences (can be city, state, country, or "Remote")
+  # Location preferences
   locations:
-    - "San Francisco, CA"
-    - "New York, NY"
     - "Remote"
-  
+    - "Europe"
+    - "Romania"
+
   # Radius in miles for location-based search
-  radius_miles: 50
-  
+  radius_miles: 0
+
   # Include remote jobs
   include_remote: true
-  
-  # Remote-only mode (ignores location)
-  remote_only: false
-  
+
+  # Remote-only mode
+  remote_only: true
+
   # Job types to include
   job_types:
     - full-time
     - contract
-    - part-time
-  
+
   # Experience levels
   experience_levels:
-    - mid-level
     - senior
     - lead
-  
-  # Minimum salary expectation (optional)
-  min_salary: 100000
-  
+    - staff
+
+  # Minimum salary expectation
+  # Set as annual baseline equivalent of roughly 2500 EUR/month
+  min_salary: 30000
+
   # Keywords to prioritize
   priority_keywords:
-    - "machine learning"
-    - "cloud"
-    - "microservices"
-    - "scalable"
-  
+    - "flutter"
+    - "remote"
+    - "cross-platform"
+    - "mobile"
+    - "desktop"
+    - "firebase"
+    - "supabase"
+    - "ai"
+    - "automation"
+    - "product"
+    - "ios"
+    - "android"
+    - "windows"
+    - "web"
+
   # Keywords to exclude
   exclude_keywords:
     - "internship"
     - "junior"
     - "entry level"
+    - "on-site"
+    - "onsite"
+    - "hybrid"
 
 # Job Board Settings
 job_boards:
   linkedin:
     enabled: true
     search_limit: 50
-  
+
   indeed:
     enabled: true
     search_limit: 50
-  
+
   glassdoor:
     enabled: true
     search_limit: 30
-  
+
   stackoverflow:
-    enabled: true
-    search_limit: 30
-  
+    enabled: false
+    search_limit: 20
+
   github_jobs:
     enabled: false
     search_limit: 20
@@ -135,16 +211,16 @@ job_boards:
 matching:
   # Minimum skill match percentage (0-100)
   min_skill_match: 60
-  
+
   # Weight for skills in matching (0-1)
-  skills_weight: 0.5
-  
+  skills_weight: 0.45
+
   # Weight for experience in matching (0-1)
   experience_weight: 0.3
-  
+
   # Weight for project relevance (0-1)
-  projects_weight: 0.2
-  
+  projects_weight: 0.25
+
   # Require exact tech stack match
   strict_tech_match: false
 
@@ -152,9 +228,9 @@ matching:
 output:
   # Save results to file
   save_to_file: true
-  output_format: "json"  # json, csv, or both
+  output_format: "json"
   output_directory: "./results"
-  
+
   # Display settings
   show_matches_in_terminal: true
   verbose: true

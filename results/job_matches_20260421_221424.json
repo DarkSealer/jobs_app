@@ -1,0 +1,294 @@
+{
+  "total_matches": 14,
+  "generated_at": "2026-04-21T22:14:23.975632",
+  "jobs": [
+    {
+      "job_title": "Senior Independent AI Engineer / Architect",
+      "company": "A.Team",
+      "location": "Americas, Europe, Israel",
+      "remote": true,
+      "overall_score": 81.0,
+      "grade": "A",
+      "matched_skills": [],
+      "missing_skills": [],
+      "recommendation": "Excellent match! Highly recommended to apply.",
+      "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266"
+    },
+    {
+      "job_title": "Senior Frontend Developer",
+      "company": "Sanctuary Computer",
+      "location": "LATAM, Asia",
+      "remote": true,
+      "overall_score": 72.42857142857143,
+      "grade": "B",
+      "matched_skills": [
+        "vercel",
+        "postgresql",
+        "firebase"
+      ],
+      "missing_skills": [
+        "notion",
+        "rest",
+        "netlify",
+        "figma",
+        "redis",
+        "jest",
+        "nuxt",
+        "typescript",
+        "graphql",
+        "cloudflare",
+        "cypress",
+        "vue",
+        "svelte",
+        "playwright",
+        "css",
+        "next.js",
+        "less",
+        "tailwind"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/senior-frontend-developer-2088707"
+    },
+    {
+      "job_title": "Senior Full-stack React Developer",
+      "company": "Lemon.io",
+      "location": "Americas, Europe, Asia, Oceania",
+      "remote": true,
+      "overall_score": 67.95652173913044,
+      "grade": "C",
+      "matched_skills": [
+        "php"
+      ],
+      "missing_skills": [
+        "react",
+        "ruby on rails",
+        "python",
+        "nuxt",
+        "next.js",
+        "gcp",
+        "javascript",
+        "vue",
+        "spring",
+        "go",
+        "laravel",
+        "devops",
+        "svelte",
+        "azure",
+        "flask",
+        "rust",
+        "node.js",
+        "typescript",
+        "ruby",
+        "aws",
+        "java",
+        "angular"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/senior-full-stack-react-developer-2088711"
+    },
+    {
+      "job_title": "iOS Developer",
+      "company": "nooro",
+      "location": "USA",
+      "remote": true,
+      "overall_score": 67.5,
+      "grade": "C",
+      "matched_skills": [
+        "git"
+      ],
+      "missing_skills": [
+        "agile",
+        "swift",
+        "figma",
+        "github"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/ios-developer-1956455"
+    },
+    {
+      "job_title": "Fullstack Developer (US - ET)",
+      "company": "Chooose",
+      "location": "USA",
+      "remote": true,
+      "overall_score": 66.0,
+      "grade": "C",
+      "matched_skills": [],
+      "missing_skills": [
+        "azure",
+        "react",
+        "typescript",
+        "python"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/fullstack-developer-us-et-2088706"
+    },
+    {
+      "job_title": "Customer Retention Manager",
+      "company": "AutoHDR",
+      "location": "USA",
+      "remote": true,
+      "overall_score": 63.0,
+      "grade": "C",
+      "matched_skills": [],
+      "missing_skills": [],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/customer-service/customer-retention-manager-2088656"
+    },
+    {
+      "job_title": "Office Assistant",
+      "company": "Coalition Technologies",
+      "location": "Worldwide",
+      "remote": true,
+      "overall_score": 63.0,
+      "grade": "C",
+      "matched_skills": [],
+      "missing_skills": [],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/marketing/office-assistant-1680495"
+    },
+    {
+      "job_title": "Copywriter",
+      "company": "Coalition Technologies",
+      "location": "Worldwide",
+      "remote": true,
+      "overall_score": 63.0,
+      "grade": "C",
+      "matched_skills": [],
+      "missing_skills": [],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/writing/copywriter-1749306"
+    },
+    {
+      "job_title": "🇩🇪 Senior/Staff Software Engineer PHP, TS, Rust, Kotlin (m/w/d)",
+      "company": "easybill GmbH",
+      "location": "Germany",
+      "remote": true,
+      "overall_score": 61.96153846153846,
+      "grade": "C",
+      "matched_skills": [
+        "php"
+      ],
+      "missing_skills": [
+        "go",
+        "react",
+        "elasticsearch",
+        "typescript",
+        "redis",
+        "microservices",
+        "github",
+        "docker",
+        "kotlin",
+        "java",
+        "rust",
+        "mysql"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/senior-staff-software-engineer-php-ts-rust-kotlin-m-w-d-2088708"
+    },
+    {
+      "job_title": "Tech Lead Full-Stack Rails Engineer",
+      "company": "Mitre Media",
+      "location": "USA, Canada, USA timezones",
+      "remote": true,
+      "overall_score": 61.3125,
+      "grade": "C",
+      "matched_skills": [
+        "postgresql"
+      ],
+      "missing_skills": [
+        "kubernetes",
+        "react",
+        "javascript",
+        "ruby on rails",
+        "rails",
+        "elasticsearch",
+        "redis",
+        "microservices",
+        "github",
+        "ruby",
+        "docker",
+        "html",
+        "css",
+        "tailwind",
+        "mysql"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746"
+    },
+    {
+      "job_title": "Tech Lead Databricks Data Engineer",
+      "company": "Mitre Media",
+      "location": "USA, Canada, USA timezones",
+      "remote": true,
+      "overall_score": 61.09090909090909,
+      "grade": "C",
+      "matched_skills": [
+        "ci/cd"
+      ],
+      "missing_skills": [
+        "sql",
+        "gcp",
+        "devops",
+        "python",
+        "microservices",
+        "github",
+        "scala",
+        "aws",
+        "java",
+        "backbone"
+      ],
+      "recommendation": "Good match. Consider applying.",
+      "url": "https://remotive.com/remote-jobs/software-development/tech-lead-databricks-data-engineer-2069747"
+    },
+    {
+      "job_title": "Senior Independent Software Developer",
+      "company": "A.Team",
+      "location": "Americas, Europe, Israel",
+      "remote": true,
+      "overall_score": 58.5,
+      "grade": "D",
+      "matched_skills": [],
+      "missing_skills": [
+        "go"
+      ],
+      "recommendation": "Moderate match. Review requirements carefully. Consider highlighting experience with go.",
+      "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265"
+    },
+    {
+      "job_title": "Customer Success Team Lead (German Speaking)",
+      "company": "Filestage",
+      "location": "Europe, EMEA",
+      "remote": true,
+      "overall_score": 58.5,
+      "grade": "D",
+      "matched_skills": [],
+      "missing_skills": [
+        "react",
+        "rest"
+      ],
+      "recommendation": "Moderate match. Review requirements carefully. Consider highlighting experience with react, rest.",
+      "url": "https://remotive.com/remote-jobs/customer-service/customer-success-team-lead-german-speaking-2088697"
+    },
+    {
+      "job_title": "Technical Support Operator",
+      "company": "KnownHost",
+      "location": "USA",
+      "remote": true,
+      "overall_score": 54.42857142857143,
+      "grade": "D",
+      "matched_skills": [
+        "php"
+      ],
+      "missing_skills": [
+        "rest",
+        "python",
+        "shell",
+        "ruby",
+        "bash",
+        "mysql"
+      ],
+      "recommendation": "Moderate match. Review requirements carefully.",
+      "url": "https://remotive.com/remote-jobs/customer-service/technical-support-operator-2088696"
+    }
+  ]
+}
