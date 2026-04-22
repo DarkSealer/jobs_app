@@ -199,6 +199,141 @@ job_boards:
     enabled: true
     search_limit: 30
 
+  remotive:
+    enabled: true
+    search_limit: 50
+
+  weworkremotely:
+    enabled: true
+    search_limit: 50
+
+  remoteok:
+    enabled: true
+    search_limit: 50
+
+  wellfound:
+    enabled: true
+    search_limit: 50
+
+  builtin:
+    enabled: true
+    search_limit: 50
+
+  dice:
+    enabled: true
+    search_limit: 50
+
+  greenhouse:
+    enabled: true
+    search_limit: 50
+    # Optional: specify company boards to search
+    # company_boards:
+    #   - shopify
+    #   - stripe
+    #   - coinbase
+
+  lever:
+    enabled: true
+    search_limit: 50
+    # Optional: specify company boards to search
+    # company_boards:
+    #   - coursera
+    #   - twitch
+    #   - grammarly
+
+  upwork:
+    enabled: true
+    search_limit: 50
+
+  # Additional job boards (placeholder implementations)
+  ziprecruiter:
+    enabled: false
+    search_limit: 30
+
+  monster:
+    enabled: false
+    search_limit: 30
+
+  google_jobs:
+    enabled: false
+    search_limit: 50
+
+  jobrapido:
+    enabled: false
+    search_limit: 30
+
+  flexjobs:
+    enabled: false
+    search_limit: 30
+
+  remote_co:
+    enabled: false
+    search_limit: 30
+
+  justremote:
+    enabled: false
+    search_limit: 30
+
+  working_nomads:
+    enabled: false
+    search_limit: 30
+
+  nodesk:
+    enabled: false
+    search_limit: 30
+
+  jobspresso:
+    enabled: false
+    search_limit: 30
+
+  yc_jobs:
+    enabled: false
+    search_limit: 50
+
+  welcome_to_jungle:
+    enabled: false
+    search_limit: 30
+
+  toptal:
+    enabled: false
+    search_limit: 30
+
+  freelancer:
+    enabled: false
+    search_limit: 30
+
+  fiverr:
+    enabled: false
+    search_limit: 30
+
+  eures:
+    enabled: false
+    search_limit: 30
+
+  ejobs:
+    enabled: false
+    search_limit: 30
+
+  bestjobs:
+    enabled: false
+    search_limit: 30
+
+  hipo:
+    enabled: false
+    search_limit: 30
+
+  ashby:
+    enabled: false
+    search_limit: 50
+
+  smartrecruiters:
+    enabled: false
+    search_limit: 50
+
+  workday:
+    enabled: false
+    search_limit: 50
+
   stackoverflow:
     enabled: false
     search_limit: 20
