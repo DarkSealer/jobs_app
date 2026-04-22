@@ -1,5 +1,5 @@
 ```
-# Python
+# Dependencies
 __pycache__/
 *.pyc
 *.pyo
@@ -18,32 +18,9 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
-.git/refs/replace/
-htmlcov/
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
-
-# Generated files
-dist/
-build/
-*.egg-info/
-.eggs/
-.installed.cfg
-*.egg
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
+*.tmp
 *.swp
 *.swo
-
-# OS
 .DS_Store
 Thumbs.db
 ```
