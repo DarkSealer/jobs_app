@@ -18,22 +18,31 @@ pip install -r requirements.txt
 
 ## Configuration
 
-1. Create a `config.yaml` file with your profile information
-2. Set up API keys for job boards (if required)
-3. Run the search agent
+1. Copy the example config and edit it locally (never commit real names, emails, or credentials):
+
+   ```bash
+   copy config.example.yaml config.yaml
+   ```
+
+   On macOS/Linux: `cp config.example.yaml config.yaml`
+
+2. Or run: `python main.py init` (creates `config.yaml` from `config.example.yaml`).
+
+3. Some scrapers only work with public feeds; boards that require login will stay empty until you add supported integrations. Keep any future API keys or session material in environment variables or a private file that stays **out** of git (see `.gitignore`).
 
 ## Usage
 
 ```bash
-python main.py --location "San Francisco" --remote
-python main.py --location "New York" --radius 50
-python main.py --remote-only
+python main.py search --location "San Francisco" --remote
+python main.py search --location "New York" --limit 50
+python main.py search --remote-only
 ```
 
 ## Project Structure
 
 - `main.py` - Entry point
-- `config.yaml` - User profile and preferences
+- `config.example.yaml` - Safe template committed to the repo
+- `config.yaml` - Your local profile (gitignored; not in the repo)
 - `src/` - Source code
   - `scraper/` - Job board scrapers
   - `matcher/` - Job matching logic

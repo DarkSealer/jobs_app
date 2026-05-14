@@ -23,4 +23,14 @@ coverage.xml
 *.swo
 .DS_Store
 Thumbs.db
+
+# Local / sensitive — never commit real profiles or secrets
+config.yaml
+.env
+.env.*
+!.env.example
+
+# Generated search output (may include scraped listings)
+results/*
+!results/.gitkeep
 ```

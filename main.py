@@ -113,7 +113,10 @@ def search(
     config_path = Path(config)
     if not config_path.exists():
         click.echo(f"❌ Configuration file not found: {config}")
-        click.echo("   Please create a config.yaml file with your profile information.")
+        click.echo(
+            "   Copy config.example.yaml to config.yaml and edit it locally "
+            "(config.yaml is not committed)."
+        )
         return
     
     with open(config_path, 'r') as f:
@@ -193,7 +196,9 @@ def search(
         click.echo("📋 Registered: Greenhouse boards")
     
     if job_boards_config.get("lever", {}).get("enabled", True):
-        scraper_manager.register_scraper(LeverScraper())
+        scraper_manager.register_scraper(
+            LeverScraper(job_boards_config.get("lever", {}))
+        )
         click.echo("📋 Registered: Lever job sites")
     
     if job_boards_config.get("upwork", {}).get("enabled", True):
@@ -237,7 +242,7 @@ def search(
         click.echo("   • Need for authentication/API keys")
         click.echo("\n💡 Try:")
         click.echo("   • Using demo mode with sample data")
-        click.echo("   • Configuring API keys in config.yaml")
+        click.echo("   • Adding credentials only in your local config (never commit them)")
         click.echo("   • Reducing search frequency")
         return
     
@@ -289,6 +294,9 @@ def show_profile(config: str):
     config_path = Path(config)
     if not config_path.exists():
         click.echo(f"❌ Configuration file not found: {config}")
+        click.echo(
+            "   Copy config.example.yaml to config.yaml and edit it locally."
+        )
         return
     
     with open(config_path, 'r') as f:
@@ -322,15 +330,14 @@ def init():
     if config_path.exists():
         click.confirm("⚠️  config.yaml already exists. Overwrite?", abort=True)
     
-    # Copy the example config
-    example_config = Path(__file__).parent / "config.yaml"
+    example_config = Path(__file__).parent / "config.example.yaml"
     if example_config.exists():
         import shutil
         shutil.copy(example_config, config_path)
-        click.echo("✅ Created config.yaml with example configuration.")
-        click.echo("📝 Edit the file to add your profile information.")
+        click.echo("✅ Created config.yaml from config.example.yaml.")
+        click.echo("📝 Edit config.yaml with your profile (that file stays local).")
     else:
-        click.echo("❌ Could not find example configuration.")
+        click.echo("❌ Could not find config.example.yaml.")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,236 @@
+# Copy to config.yaml and customize (config.yaml is gitignored).
+# Example profile only — replace with your real details locally.
+
+profile:
+  name: "Your Name"
+  email: "you@example.com"
+
+  description: |
+    Replace with your professional summary, years of focus, and technologies
+    you want to match against job postings.
+
+  experience_years: 5
+
+  skills:
+    - Python
+    - Git
+    - REST APIs
+
+  job_titles:
+    - Software Engineer
+    - Senior Software Engineer
+
+  projects:
+    - name: "Sample CLI Tool"
+      description: "A small command-line utility demonstrating parsing and file I/O."
+      technologies:
+        - Python
+        - YAML
+
+# Search Preferences
+search:
+  locations:
+    - "Remote"
+    - "United States"
+
+  radius_miles: 0
+  include_remote: true
+  remote_only: false
+
+  job_types:
+    - full-time
+    - contract
+
+  experience_levels:
+    - mid-level
+    - senior
+
+  min_salary: 80000
+
+  priority_keywords:
+    - "remote"
+    - "python"
+    - "api"
+
+  exclude_keywords:
+    - "internship"
+    - "junior"
+    - "entry level"
+    - "on-site"
+    - "onsite"
+    - "hybrid"
+
+# Job Board Settings
+job_boards:
+  linkedin:
+    enabled: true
+    search_limit: 50
+
+  indeed:
+    enabled: true
+    search_limit: 50
+
+  glassdoor:
+    enabled: true
+    search_limit: 30
+
+  remotive:
+    enabled: true
+    search_limit: 50
+
+  weworkremotely:
+    enabled: true
+    search_limit: 50
+
+  remoteok:
+    enabled: true
+    search_limit: 50
+
+  wellfound:
+    enabled: true
+    search_limit: 50
+
+  builtin:
+    enabled: true
+    search_limit: 50
+
+  dice:
+    enabled: true
+    search_limit: 50
+
+  greenhouse:
+    enabled: true
+    search_limit: 50
+    # Optional: specify company boards to search
+    # company_boards:
+    #   - shopify
+    #   - stripe
+    #   - coinbase
+
+  lever:
+    enabled: true
+    search_limit: 50
+    max_boards: 10
+    request_timeout_seconds: 8
+    max_search_seconds: 45
+    # Optional: specify company boards to search
+    # company_boards:
+    #   - coursera
+    #   - twitch
+    #   - grammarly
+
+  upwork:
+    enabled: true
+    search_limit: 50
+
+  ziprecruiter:
+    enabled: false
+    search_limit: 30
+
+  monster:
+    enabled: false
+    search_limit: 30
+
+  google_jobs:
+    enabled: false
+    search_limit: 50
+
+  jobrapido:
+    enabled: false
+    search_limit: 30
+
+  flexjobs:
+    enabled: false
+    search_limit: 30
+
+  remote_co:
+    enabled: false
+    search_limit: 30
+
+  justremote:
+    enabled: false
+    search_limit: 30
+
+  working_nomads:
+    enabled: false
+    search_limit: 30
+
+  nodesk:
+    enabled: false
+    search_limit: 30
+
+  jobspresso:
+    enabled: false
+    search_limit: 30
+
+  yc_jobs:
+    enabled: false
+    search_limit: 50
+
+  welcome_to_jungle:
+    enabled: false
+    search_limit: 30
+
+  toptal:
+    enabled: false
+    search_limit: 30
+
+  freelancer:
+    enabled: false
+    search_limit: 30
+
+  fiverr:
+    enabled: false
+    search_limit: 30
+
+  eures:
+    enabled: false
+    search_limit: 30
+
+  ejobs:
+    enabled: false
+    search_limit: 30
+
+  bestjobs:
+    enabled: false
+    search_limit: 30
+
+  hipo:
+    enabled: false
+    search_limit: 30
+
+  ashby:
+    enabled: false
+    search_limit: 50
+
+  smartrecruiters:
+    enabled: false
+    search_limit: 50
+
+  workday:
+    enabled: false
+    search_limit: 50
+
+  stackoverflow:
+    enabled: false
+    search_limit: 20
+
+  github_jobs:
+    enabled: false
+    search_limit: 20
+
+# Matching Configuration
+matching:
+  min_skill_match: 60
+  skills_weight: 0.45
+  experience_weight: 0.3
+  projects_weight: 0.25
+  strict_tech_match: false
+
+# Output Settings
+output:
+  save_to_file: true
+  output_format: "json"
+  output_directory: "./results"
+  show_matches_in_terminal: true
+  verbose: true

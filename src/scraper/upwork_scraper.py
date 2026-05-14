@@ -38,8 +38,13 @@ class UpworkScraper(BaseScraper):
         print(f"ℹ️  Upwork search requires authentication: {query}")
         
         try:
-            # Try to search public RSS feed as fallback
-            rss_url = f"https://www.upwork.com/ab/feed/topics/rss?q={query}&sort=recency&user_timezone=Europe%2FBucharest"
+            from urllib.parse import quote
+
+            q = quote(query, safe="")
+            rss_url = (
+                "https://www.upwork.com/ab/feed/topics/rss?"
+                f"q={q}&sort=recency&user_timezone=UTC"
+            )
             
             self._rate_limit()
             response = self.session.get(rss_url, timeout=15)
