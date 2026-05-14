@@ -38,13 +38,28 @@ class RemoteOkScraper(BaseScraper):
                 return []
             
             data = response.json()
-            
-            for item in data[:limit]:
+            if not isinstance(data, list):
+                print("Remote OK payload is not a list; skipping.")
+                return []
+
+            for item in data:
+                if len(jobs) >= limit:
+                    break
+                if not isinstance(item, dict):
+                    continue
+                if not item.get("position"):
+                    # Remote OK can include a metadata row without a position.
+                    continue
+
                 # Filter by query if provided
                 if query:
                     title = item.get("position", "")
                     tags = item.get("tags", [])
-                    tag_names = [tag.get("name", "").lower() for tag in tags]
+                    tag_names = [
+                        (tag.get("name", "") if isinstance(tag, dict) else str(tag))
+                        .lower()
+                        for tag in tags
+                    ]
                     
                     if query.lower() not in title.lower() and query.lower() not in " ".join(tag_names):
                         continue

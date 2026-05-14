@@ -3,7 +3,7 @@
 from typing import List, Optional, Dict, Any
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+import time
 
 from .base_scraper import BaseScraper
 from ..models.job import Job, JobSource
@@ -20,6 +20,11 @@ class LeverScraper(BaseScraper):
         })
         # Common companies using Lever
         self.company_boards = config.get("company_boards", []) if config else []
+        self.max_boards = (config or {}).get("max_boards", 10)
+        self.request_timeout_seconds = (config or {}).get(
+            "request_timeout_seconds", 8
+        )
+        self.max_search_seconds = (config or {}).get("max_search_seconds", 45)
     
     def search(
         self, 
@@ -37,16 +42,26 @@ class LeverScraper(BaseScraper):
                 "coursera", "twitch", "grammarly", "fiverr", "upwork",
                 "canva", "affirm", "brex", "ramp", "mercury"
             ]
-        
-        for company_board in self.company_boards:
+        started_at = time.monotonic()
+
+        for company_board in self.company_boards[: self.max_boards]:
             if len(jobs) >= limit:
+                break
+            if time.monotonic() - started_at > self.max_search_seconds:
+                print(
+                    "Lever scraper timed out after "
+                    f"{self.max_search_seconds}s; returning partial results.",
+                )
                 break
             
             board_url = f"https://api.lever.co/v0/postings/{company_board}"
             
             try:
                 self._rate_limit()
-                response = self.session.get(board_url, timeout=15)
+                response = self.session.get(
+                    board_url,
+                    timeout=(5, self.request_timeout_seconds),
+                )
                 
                 if response.status_code != 200:
                     continue
@@ -89,7 +104,10 @@ class LeverScraper(BaseScraper):
         """Get full job details from Lever."""
         try:
             self._rate_limit()
-            response = self.session.get(job_url, timeout=15)
+            response = self.session.get(
+                job_url,
+                timeout=(5, self.request_timeout_seconds),
+            )
             
             if response.status_code != 200:
                 return None
