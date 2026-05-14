@@ -220,6 +220,8 @@ job_boards:
     search_limit: 20
 
 # Matching Configuration
+# Job Radar / JobMatcher v2 uses fixed weights (45/20/20/15) in code.
+# Keys below are kept for compatibility; they are not applied to the score.
 matching:
   min_skill_match: 60
   skills_weight: 0.45

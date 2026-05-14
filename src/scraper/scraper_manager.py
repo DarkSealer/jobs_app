@@ -1,7 +1,6 @@
 """Unified job scraper manager that coordinates multiple job board scrapers."""
 
-from typing import List, Optional, Dict, Any, Type
-from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
 
 from .base_scraper import BaseScraper
 from ..models.job import Job
@@ -40,33 +39,59 @@ class ScraperManager:
         Returns:
             List of all jobs found across all scrapers
         """
-        all_jobs = []
-        
+        jobs, _ = self.search_all_reporting(
+            query=query,
+            location=location,
+            remote=remote,
+            limit_per_board=limit_per_board,
+            verbose=verbose,
+        )
+        return jobs
+
+    def search_all_reporting(
+        self,
+        query: str,
+        location: Optional[str] = None,
+        remote: bool = False,
+        limit_per_board: int = 50,
+        verbose: bool = False,
+    ) -> Tuple[List[Job], List[Tuple[str, str]]]:
+        """
+        Like ``search_all``, but also returns per-scraper error messages.
+
+        Returns:
+            (jobs, errors) where each error is (scraper_class_name, message).
+        """
+        all_jobs: List[Job] = []
+        errors: List[Tuple[str, str]] = []
+
         for scraper in self.scrapers:
             scraper_name = scraper.__class__.__name__
-            
+
             if verbose:
                 print(f"🔎 Searching {scraper_name}...")
-            
+
             try:
                 jobs = scraper.search(
                     query=query,
                     location=location,
                     remote=remote,
-                    limit=limit_per_board
+                    limit=limit_per_board,
                 )
-                
+
                 if verbose:
                     print(f"   ✓ Found {len(jobs)} jobs from {scraper_name}")
-                
+
                 all_jobs.extend(jobs)
-                
+
             except Exception as e:
+                msg = str(e)
+                errors.append((scraper_name, msg))
                 if verbose:
                     print(f"   ⚠️  Error with {scraper_name}: {e}")
-        
-        return all_jobs
-    
+
+        return all_jobs, errors
+
     def remove_duplicates(self, jobs: List[Job]) -> List[Job]:
         """Remove duplicate jobs based on URL or title+company combination."""
         seen = set()

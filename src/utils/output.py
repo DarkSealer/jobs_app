@@ -31,9 +31,10 @@ def display_results(results: List[MatchResult], verbose: bool = False, limit: in
     table.add_column("Company", style="green")
     table.add_column("Location", style="yellow")
     table.add_column("Score", justify="right", style="bold")
+    table.add_column("Band", justify="center")
     table.add_column("Grade", justify="center")
     table.add_column("Remote", justify="center")
-    
+
     for i, result in enumerate(results[:limit], 1):
         remote_icon = "🏠" if result.job.remote else "📍"
         table.add_row(
@@ -42,6 +43,7 @@ def display_results(results: List[MatchResult], verbose: bool = False, limit: in
             result.job.company[:25] + "..." if len(result.job.company) > 25 else result.job.company,
             result.job.location[:20] + "..." if len(result.job.location) > 20 else result.job.location,
             f"{result.score.overall_score:.1f}%",
+            result.score.get_quality_band(),
             result.score.get_grade(),
             remote_icon if result.job.remote else "",
         )
@@ -59,7 +61,11 @@ def display_results(results: List[MatchResult], verbose: bool = False, limit: in
             panel_text.append(f"📍 Location: {result.job.location}\n")
             panel_text.append(f"🔗 URL: {result.job.url}\n\n")
             
-            panel_text.append(f"📊 Match Score: {result.score.overall_score:.1f}% ({result.score.get_grade()})\n\n", style="bold")
+            panel_text.append(
+                f"📊 Match Score: {result.score.overall_score:.1f}% "
+                f"({result.score.get_quality_band()} / {result.score.get_grade()})\n\n",
+                style="bold",
+            )
             
             if result.score.matched_skills:
                 panel_text.append("✅ Matched Skills:\n", style="bold green")
@@ -119,15 +125,30 @@ def _save_csv(results: List[MatchResult], filepath: Path):
         return
     
     fieldnames = [
-        "rank", "job_title", "company", "location", "remote",
-        "overall_score", "grade", "skills_match", "experience_match",
-        "matched_skills", "missing_skills", "recommendation", "url"
+        "rank",
+        "job_title",
+        "company",
+        "location",
+        "remote",
+        "overall_score",
+        "quality_band",
+        "grade",
+        "skills_match",
+        "experience_match",
+        "title_match",
+        "project_relevance",
+        "matched_skills",
+        "missing_skills",
+        "matched_keywords",
+        "score_breakdown_json",
+        "recommendation",
+        "url",
     ]
-    
+
     with open(filepath, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        
+
         for i, result in enumerate(results, 1):
             writer.writerow({
                 "rank": i,
@@ -136,11 +157,19 @@ def _save_csv(results: List[MatchResult], filepath: Path):
                 "location": result.job.location,
                 "remote": result.job.remote,
                 "overall_score": f"{result.score.overall_score:.1f}",
+                "quality_band": result.score.get_quality_band(),
                 "grade": result.score.get_grade(),
                 "skills_match": f"{result.score.skills_match:.1f}",
                 "experience_match": f"{result.score.experience_match:.1f}",
+                "title_match": f"{result.score.title_match:.1f}",
+                "project_relevance": f"{result.score.project_relevance:.1f}",
                 "matched_skills": "; ".join(result.score.matched_skills),
                 "missing_skills": "; ".join(result.score.missing_skills),
+                "matched_keywords": "; ".join(result.score.matched_keywords),
+                "score_breakdown_json": json.dumps(
+                    result.score.score_breakdown,
+                    ensure_ascii=False,
+                ),
                 "recommendation": result.recommendation,
                 "url": result.job.url,
             })

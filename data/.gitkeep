@@ -1,0 +1,1 @@
+# Keeps data/ in git; SQLite DB is gitignored.

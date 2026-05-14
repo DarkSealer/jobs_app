@@ -33,4 +33,8 @@ config.yaml
 # Generated search output (may include scraped listings)
 results/*
 !results/.gitkeep
+
+# Job Radar local SQLite database
+data/jobs.db
+data/*.db-journal
 ```

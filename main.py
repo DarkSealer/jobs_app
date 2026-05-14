@@ -14,21 +14,8 @@ from datetime import datetime
 
 from src.models.profile import UserProfile
 from src.matcher import JobMatcher
-from src.scraper import (
-    IndeedScraper,
-    RemotiveScraper,
-    WeWorkRemotelyScraper,
-    RemoteOkScraper,
-    WellfoundScraper,
-    BuiltInScraper,
-    DiceScraper,
-    GreenhouseScraper,
-    LeverScraper,
-    UpworkScraper,
-    LinkedInScraper,
-    GlassdoorScraper,
-    ScraperManager,
-)
+from src.scraper import ScraperManager
+from src.scraper.registry import register_default_scrapers
 from src.utils.output import display_results, save_results
 
 
@@ -147,63 +134,16 @@ def search(
     
     # Initialize matcher
     matcher = JobMatcher(profile, config_data)
-    
-    # Get job board configuration
-    job_boards_config = config_data.get("job_boards", {})
-    
+
     # Initialize scraper manager
     scraper_manager = ScraperManager(config_data)
-    
-    # Register all enabled scrapers
-    if job_boards_config.get("indeed", {}).get("enabled", True):
-        scraper_manager.register_scraper(IndeedScraper())
-        click.echo("📋 Registered: Indeed")
-    
-    if job_boards_config.get("linkedin", {}).get("enabled", True):
-        scraper_manager.register_scraper(LinkedInScraper())
-        click.echo("📋 Registered: LinkedIn Jobs")
-    
-    if job_boards_config.get("glassdoor", {}).get("enabled", True):
-        scraper_manager.register_scraper(GlassdoorScraper())
-        click.echo("📋 Registered: Glassdoor")
-    
-    if job_boards_config.get("remotive", {}).get("enabled", True):
-        scraper_manager.register_scraper(RemotiveScraper())
-        click.echo("📋 Registered: Remotive")
-    
-    if job_boards_config.get("weworkremotely", {}).get("enabled", True):
-        scraper_manager.register_scraper(WeWorkRemotelyScraper())
-        click.echo("📋 Registered: We Work Remotely")
-    
-    if job_boards_config.get("remoteok", {}).get("enabled", True):
-        scraper_manager.register_scraper(RemoteOkScraper())
-        click.echo("📋 Registered: Remote OK")
-    
-    if job_boards_config.get("wellfound", {}).get("enabled", True):
-        scraper_manager.register_scraper(WellfoundScraper())
-        click.echo("📋 Registered: Wellfound")
-    
-    if job_boards_config.get("builtin", {}).get("enabled", True):
-        scraper_manager.register_scraper(BuiltInScraper())
-        click.echo("📋 Registered: Built In")
-    
-    if job_boards_config.get("dice", {}).get("enabled", True):
-        scraper_manager.register_scraper(DiceScraper())
-        click.echo("📋 Registered: Dice")
-    
-    if job_boards_config.get("greenhouse", {}).get("enabled", True):
-        scraper_manager.register_scraper(GreenhouseScraper())
-        click.echo("📋 Registered: Greenhouse boards")
-    
-    if job_boards_config.get("lever", {}).get("enabled", True):
-        scraper_manager.register_scraper(
-            LeverScraper(job_boards_config.get("lever", {}))
-        )
-        click.echo("📋 Registered: Lever job sites")
-    
-    if job_boards_config.get("upwork", {}).get("enabled", True):
-        scraper_manager.register_scraper(UpworkScraper())
-        click.echo("📋 Registered: Upwork")
+
+    register_default_scrapers(
+        scraper_manager,
+        config_data,
+        skip_manual=False,
+        echo_registered=lambda m: click.echo(m),
+    )
     
     click.echo(f"\n✅ Total registered job boards: {len(scraper_manager.scrapers)}")
     click.echo()
